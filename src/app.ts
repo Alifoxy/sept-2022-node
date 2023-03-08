@@ -1,4 +1,4 @@
-// @ts-ignore
+
 import express, { NextFunction, Request, Response } from "express";
 
 import {IError} from "./types/common.types";
@@ -24,6 +24,6 @@ app.use((err: IError, req: Request, res: Response, next: NextFunction) => {
 const PORT = 5100;
 
 app.listen(PORT, () => {
-    mongodb.connect("mongodb+srv://Alifoxy:<password>@cluster0.bqbczay.mongodb.net/?retryWrites=true&w=majority").then();
+    mongoose.connect("mongodb+srv://Alifoxy:<password>@cluster0.bqbczay.mongodb.net/?retryWrites=true&w=majority").then();
     console.log(`Server has started on PORT ${PORT} 🚀`);
 });
