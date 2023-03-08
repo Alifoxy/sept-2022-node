@@ -1,10 +1,11 @@
+// @ts-ignore
 import {NextFunction, Request, Response} from "express";
 
 import {User} from "../models/user.model";
 import {IUser} from "../types/user.types";
 import {ICommonResponse} from "../types/common.types";
 import {IMessage} from "../types/common.types";
-try{}catch (e) {next(e);}
+
 class UserController {
      public async getAll(req:Request, res:Response, next: NextFunction): Promise<Response<IUser[]>>{
          try{
@@ -53,9 +54,11 @@ class UserController {
          try{
              const { userId } = req.params;
 
-             const user = req.body;
-
-             const updatedUser = await User.updateOne({ _id: userId }, { ...user });
+             const updatedUser = await User.findByIdAndUpdate(
+                 userId,
+                 { ...req.body },
+                 { new: true }
+             );
 
              return res.status(200).json({
                  message: "User updated",

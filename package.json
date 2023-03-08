@@ -1,14 +1,38 @@
 {
-  "name": "sept2022node",
+  "name": "sept_2022Node",
   "version": "1.0.0",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "@typescript-eslint/utils": "^5.54.1",
+    "@types/express": "^4.17.17",
     "eslint": "^8.35.0",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
     "mongoose": "^7.0.1",
     "typescript": "^4.9.5",
-    "dotenv": "^16.0.3"
-  }
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
+    "nodemon": "^2.0.21",
+    "joi": "^17.8.3",
+    "mongodb": "^5.1.0",
+    "rimraf": "^4.3.1"
+  },
+  "scripts": {
+    "start": "rimraf dist && tsc-watch --onSuccess 'npm run watch'",
+    "watch": "nodemon 'src/app.ts' --watch './src'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alifoxy/sept_2022Node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alifoxy/sept_2022Node/issues"
+  },
+  "homepage": "https://github.com/Alifoxy/sept_2022Node#readme"
 }

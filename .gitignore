@@ -1,6 +1,6 @@
 # Default ignored files
 /node_modules
-.//idea
+/.idea
 /sept_2022Node.iml
 /shelf/
 /.idea/workspace.xml

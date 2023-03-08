@@ -1,8 +1,5 @@
-import {NextFunction} from "express";
-
-import express  from "express";
-
-import mongoose from "mongoose";
+// @ts-ignore
+import express, { NextFunction, Request, Response } from "express";
 
 import {IError} from "./types/common.types";
 import { userRouter } from "./routers/user.router";
@@ -27,6 +24,6 @@ app.use((err: IError, req: Request, res: Response, next: NextFunction) => {
 const PORT = 5100;
 
 app.listen(PORT, () => {
-    mongoose.connect("mongodb://127.0.0.1:27017/sept-2022").then();
+    mongodb.connect("mongodb+srv://Alifoxy:<password>@cluster0.bqbczay.mongodb.net/?retryWrites=true&w=majority").then();
     console.log(`Server has started on PORT ${PORT} 🚀`);
 });
